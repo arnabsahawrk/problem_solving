@@ -1,1 +1,4 @@
-BRONZE
+YES
+NO
+YES
+NO
