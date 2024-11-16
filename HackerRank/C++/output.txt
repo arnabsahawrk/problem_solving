@@ -1,4 +1,1 @@
-eight
-nine
-even
-odd
+1000
