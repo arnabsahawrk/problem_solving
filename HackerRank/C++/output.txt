@@ -1,1 +1,4 @@
-10
+eight
+nine
+even
+odd
