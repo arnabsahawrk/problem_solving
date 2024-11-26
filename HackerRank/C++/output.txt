@@ -1,1 +1,2 @@
-1 4 6 8 10 
+Imposter detected for ally 1
+Ally 3 has been captured
