@@ -15,18 +15,21 @@ string timeConversion(string s)
     string b = s.substr(3, 2);
     string c = s.substr(6, 2);
     string d = s.substr(8, 2);
-    int hours = atoi(a.c_str());
-    if (d == "PM")
+
+    int hours = stoi(a);
+
+    if (d == "AM" && hours == 12)
+    {
+        hours = 0;
+    }
+    else if (d == "PM" && hours != 12)
+    {
         hours += 12;
+    }
 
-    string temp;
-    if (hours == 0)
-        temp = "00";
-    else
-        temp = to_string(hours);
-    temp += ":" + b + ":" + c;
+    string formattedHours = (hours < 10) ? "0" + to_string(hours) : to_string(hours);
 
-    return temp;
+    return formattedHours + ":" + b + ":" + c;
 }
 
 int main()
