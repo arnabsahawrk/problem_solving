@@ -4,8 +4,9 @@ using namespace std;
 int main()
 {
 
+    vector<int> v; // dynamic array
+
     // adding an element
-    vector<int> v;
     v.push_back(1);
     v.emplace_back(2); // it is similar to push_back but emplace_back is faster than push_back.
 
