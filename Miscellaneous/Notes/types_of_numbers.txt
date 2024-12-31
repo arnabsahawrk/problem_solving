@@ -1,0 +1,19 @@
+Real number: any point on the number line
+
+Positive Number: Right to the zero
+
+Negative Number: left to the zero
+
+Non-Negative number: Positive and zero
+
+Natural Numbers: {1, 2, 3...}
+
+Whole Numbers: {0, 1, 2, 3...}
+
+Integers: {....-3, -2, -1, 0, 1, 2, 3....}
+
+Retinal Numbers: Which number is float but we can display it as fraction  - 3.5, 7/2
+
+Irrational Numbers: which number we can display fraction, which number after point it is infinite e.g. Prime
+
+Fraction: 1/2

@@ -1,0 +1,6 @@
+-> The Euclidean Algorithm (LCM & GCD)
+: GCD = gcd(b, a%b)
+- gcd(a,b) * lcm(a,b) = a * b
+- lcm(a,b) = (a*b)/gcd
+- gcd(a,b) = (a*b)/lcm
+- Co-Prime = 1

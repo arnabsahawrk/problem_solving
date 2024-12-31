@@ -1,0 +1,19 @@
+-> Power: b^x
+- Base and exponent
+
+5^3 = 5 * 5 * 5 = 125
+
+Power opposite thing is Root.
+Square Root, Cube Root
+
+-> Root: n√a (nth root of a)
+-Assume: n√a = x
+-then x^n = a
+
+- 2√16 = 4
+- 4^2 = 16
+
+- 3√27 = 3
+- 3^3 = 27
+
+So, power and root relate with each other.

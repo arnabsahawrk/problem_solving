@@ -1,0 +1,15 @@
+-> Factorial
+: N! = N*(N-1) * (N-2) * (N-3)*....
+- 4! = 4 * 3 * 2 * 1 = 24
+- Exception 0! = 1
+
+- Consider how other factorials are related
+- 5! = 120 -> divide it by 5 -> 24
+- 4! = 24 -> divide it by 4 -> 6
+- 3! = 6 -> divide it by 3 -> 2
+- 2! = 2 -> divide it by 2 -> 1
+- 1! = 1 -> divide it by 1 -> stays 1
+- 0! = 1
+
+: Consider a cricket team with 4 players how many batting orders are possible -> 24 combinations (4 Factorial).
+: Factorial we used for deal with permutation and combination.

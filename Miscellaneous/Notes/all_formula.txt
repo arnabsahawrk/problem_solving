@@ -1,0 +1,14 @@
+-> Sum of Natural Numbers 1 to N (1 + 2 + 3 + 4 +.........N)?
+: (N * (N + 1)) / 2
+
+-> Sum of Arithmetic Numbers (nth term) s = 2 + 5 + 8....
+- nth term in arithmetic series: A + (N-1) * D
+- 100th number = 2 * 99 * 3 = 299
+
+
+-> How many digits in a number?
+: int count = (int)(log10(N) + 1)
+
+
+-> Find the Mid of a Binary Search?
+: Start + (End - Start) / 2
