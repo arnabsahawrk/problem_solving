@@ -9,23 +9,18 @@ int main()
     while (t--)
     {
         int n;
-        string ss;
-        cin >> n >> ss;
+        cin >> n;
+        string s;
+        cin >> s;
 
-        int zero = 0, one = 0;
-        for (int i = 0; i < n; i++)
+        if (*min_element(s.begin(), s.end()) == *max_element(s.begin(), s.end()))
         {
-            if (ss[i] == '0')
-            {
-                zero++;
-            }
-            else
-            {
-                one++;
-            }
+            cout << n << endl;
         }
-
-        cout << abs(zero - one) << endl;
+        else
+        {
+            cout << 1 << endl;
+        }
     }
 
     return 0;
