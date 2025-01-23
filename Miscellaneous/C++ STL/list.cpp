@@ -3,7 +3,8 @@ using namespace std;
 
 int main()
 {
-    list<int> ls; // a doubly-ll container
+    // list use doubly linked list mechanism under the hood
+    list<int> ls;
 
     ls.push_back(2);    // {2}
     ls.emplace_back(4); // {2, 4}

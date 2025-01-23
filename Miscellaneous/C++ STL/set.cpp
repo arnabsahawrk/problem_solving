@@ -3,12 +3,14 @@ using namespace std;
 
 int main()
 {
+    // set use balanced BST mechanism under the hood. mean store in sorted order and not contain duplicate
+
     set<int> st;   // sorted, unique
-    st.insert(1);  // {1}
-    st.emplace(2); //{1, 2}
-    st.insert(2);  //{1, 2} -> takes only unique
-    st.insert(4);  //{1, 2, 4}
-    st.insert(3);  //{1, 2, 3, 4}
+    st.insert(1);
+    st.emplace(2);
+    st.insert(2);
+    st.insert(4);
+    st.insert(3);
 
     // Functionality of insert in vector
     // can be used also, that only increases
@@ -35,10 +37,9 @@ int main()
     st2.emplace(4);
     st2.insert(5);
 
-    // st2 -> {1, 2, 3, 4, 5}
     auto it4 = st2.find(2);
     auto it5 = st2.find(4);
-    st2.erase(it4, it5); // after erase {1, 4, 5} {first, last}
+    st2.erase(it4, it5);
 
     // lower_bound() and upper_bound() function works in the same way
     // as in vector it does
