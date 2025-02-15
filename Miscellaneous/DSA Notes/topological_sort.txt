@@ -1,0 +1,11 @@
+Topological Sort
+------------------
+-> It is a linear ordering of its vertices such that for every directed edge uv for vertex u to v, u comes before vertex v in the ordering
+
+-> Graph should be DAG
+
+-> Ever DAG will have at least one topological ordering
+
+For sort in topological order: first we have to find out 0 indegree vertex write it down and delete it with its edges the again find out 0 indegree vertex. process will continue and finally we will get the topological sort order.
+
+whenever in problem state that something before something the first intuition should be flash through in mind topological sort.
