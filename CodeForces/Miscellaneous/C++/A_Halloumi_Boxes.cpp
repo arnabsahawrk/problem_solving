@@ -3,10 +3,10 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
+    int tc;
+    cin >> tc;
 
-    while (t--)
+    while (tc--)
     {
         int n, k;
         cin >> n >> k;
@@ -15,9 +15,10 @@ int main()
         for (int i = 0; i < n; i++)
             cin >> arr[i];
 
-            if(k == 1 && !is_sorted(arr.begin(), arr.end()))
-            cout<<"NO"<<endl;
-            else cout<<"YES"<<endl;
+        if (k == 1 && !is_sorted(arr.begin(), arr.end()))
+            cout << "NO" << endl;
+        else
+            cout << "YES" << endl;
     }
 
     return 0;
