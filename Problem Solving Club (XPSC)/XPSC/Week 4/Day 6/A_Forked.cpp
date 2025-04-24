@@ -26,7 +26,7 @@ const ll linf = 1e18;
 const int mod = 1e9 + 7;
 int dx[4] = {-1, 1, -1, 1}, dy[4] = {-1, -1, 1, 1};
 
-/* Don't just plan big - act on smalls, consistent steps. Every day counts. */
+/* Don't plan big - act on smalls, consistent steps. Every day counts. */
 
 void arnabsahawrk()
 {

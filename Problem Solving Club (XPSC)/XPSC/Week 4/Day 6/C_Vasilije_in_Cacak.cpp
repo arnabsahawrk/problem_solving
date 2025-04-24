@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha   Date: 04/24/2025 [13:09:59]   */
+/*   Author: Arnab Saha   Date: 04/24/2025 [18:14:18]   */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,7 +7,8 @@ using namespace std;
     cin.tie(nullptr);                 \
     cout.tie(nullptr)
 #define ll long long
-#define vi vector<int>
+#define vll vector<ll>
+#define pll pair<ll, ll>
 #define pb push_back
 #define all(v) (v).begin(), (v).end()
 #define endl '\n'
@@ -25,35 +26,18 @@ const int mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
+    ll n, k, x;
+    cin >> n >> k >> x;
 
-    if (d < b)
-        cout << -1 << endl;
+    ll d = (n + k) - n, e = n - k;
+
+    ll minGet = d * (d + 1) / 2;
+    ll maxGet = (n * (n + 1) / 2) - (e * (e + 1) / 2);
+
+    if (x >= minGet && x <= maxGet)
+        cout << "YES" << endl;
     else
-    {
-        int count = 0;
-
-        while (b < d)
-        {
-            b++;
-            a++;
-            count++;
-        }
-
-        if (c > a)
-            cout << -1 << endl;
-        else
-        {
-            while (a > c)
-            {
-                a--;
-                count++;
-            }
-
-            cout << count << endl;
-        }
-    }
+        cout << "NO" << endl;
 }
 
 int main()
