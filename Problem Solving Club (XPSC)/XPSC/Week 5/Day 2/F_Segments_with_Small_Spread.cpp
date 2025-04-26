@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 25/04/2025 [22:40:41]   */
+/*   Author: Arnab Saha  Date: 26/04/2025 [12:46:33]   */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,31 +26,31 @@ const int mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
-    ll n, s;
-    cin >> n >> s;
+    ll n, k;
+    cin >> n >> k;
 
     vll arr(n);
     rep(i, 0, n) cin >> arr[i];
 
-    ll l = 0, r = 0, sum = 0, ans = 0;
+    multiset<ll> ml;
+
+    ll l = 0, r = 0, ans = 0;
     while (r < n)
     {
-        sum += arr[r];
+        ml.insert(arr[r]);
 
-        if (sum <= s)
+        if (*(ml.rbegin()) - *(ml.begin()) <= k)
             ans += (r - l + 1);
         else
         {
-            while (sum > s)
+            while (*(ml.rbegin()) - *(ml.begin()) > k)
             {
-                sum -= arr[l];
+                auto it = ml.find(arr[l]);
+                ml.erase(it);
                 l++;
             }
-
-            if (sum <= s)
-                ans += (r - l + 1);
+            ans += (r - l + 1);
         }
-
         r++;
     }
 
