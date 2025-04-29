@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 04/29/2025 [19:07:59]   */
+/*   Author: Arnab Saha  Date: 04/30/2025 [01:40:22]   */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,7 +16,6 @@ using namespace std;
 #define endl '\n'
 #define rep(i, a, b) for (int i = a; i < b; ++i)
 #define rrep(i, a, b) for (int i = a; i >= b; --i)
-#define fo(i, n) for (int i = 0; i < n; ++i)
 #define each(x, a) for (auto &x : a)
 #define yes cout << "YES" << endl
 #define no cout << "NO" << endl
@@ -29,50 +28,35 @@ const int mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
-    int n;
+    ll n;
     cin >> n;
 
     string s;
     cin >> s;
 
-    int singleOne = 0, doubleOne = 0, maxOne = 0, zero = 0;
+    ll zero = 0, one = 0;
+    bool flag = true;
     rep(i, 0, n)
     {
-        char c = s[i];
-        int count = 0;
-
-        while (i < n)
+        if (s[i] == '0')
         {
-            if (s[i] != c)
-                break;
-
-            count++, i++;
-        }
-
-        if (c == '1')
-        {
-            if (count == 1)
-                singleOne++;
-            else if (count == 2)
-                doubleOne++;
-            else
-                maxOne++;
+            if (flag)
+            {
+                zero++;
+                flag = false;
+            }
         }
         else
-            zero++;
-
-        i--;
+        {
+            one++;
+            flag = true;
+        }
     }
 
-    if (s[0] == '1' && s[n - 1] == '1' && zero <= 1)
+    if (one > zero)
         yes;
     else
-    {
-        if (maxOne || doubleOne >= 2 || (doubleOne == 1 && zero == 1) || (doubleOne == 1 && singleOne == 1 && zero == 2))
-            yes;
-        else
-            no;
-    }
+        no;
 }
 
 int main()
