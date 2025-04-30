@@ -18,8 +18,8 @@ using namespace std;
 #define rrep(i, a, b) for (int i = a; i >= b; --i)
 #define fo(i, n) for (int i = 0; i < n; ++i)
 #define each(x, a) for (auto &x : a)
-#define yes cout << "YES" << endl
-#define no cout << "NO" << endl
+#define yes cout << "Yes" << endl
+#define no cout << "No" << endl
 #define fst first
 #define snd second
 
@@ -32,16 +32,14 @@ void arnabsahawrk()
     ll n, q;
     cin >> n >> q;
 
-    ll mx = 200005;
-    vll arr(mx), prefixOne(mx), prefixTwo(mx), prefixThree(mx);
-
-    rep(i, 1, n + 1)
+    vll a(n + 1), prefOne(n + 1), prefTwo(n + 1), prefThree(n + 1);
+    rep(i, 1, n+1)
     {
-        cin >> arr[i];
+        cin >> a[i];
 
-        prefixOne[i] = prefixOne[i - 1] + (arr[i] == 1);
-        prefixTwo[i] = prefixTwo[i - 1] + (arr[i] == 2);
-        prefixThree[i] = prefixThree[i - 1] + (arr[i] == 3);
+        prefOne[i] = prefOne[i - 1] + (a[i] == 1);
+        prefTwo[i] = prefTwo[i - 1] + (a[i] == 2);
+        prefThree[i] = prefThree[i - 1] + (a[i] == 3);
     }
 
     while (q--)
@@ -50,22 +48,19 @@ void arnabsahawrk()
         cin >> l >> r;
 
         ll len = r - l + 1;
-
-        if (len & 1)
-            cout << "No" << endl;
-        else
+        if (len % 2 == 1)
         {
-            ll cnt1 = prefixOne[r] - prefixOne[l - 1];
-            ll cnt2 = prefixTwo[r] - prefixTwo[l - 1];
-            ll cnt3 = prefixThree[r] - prefixThree[l - 1];
-
-            ll half = len / 2;
-
-            if (cnt1 > half || cnt2 > half || cnt3 > half)
-                cout << "No" << endl;
-            else
-                cout << "Yes" << endl;
+            no;
+            continue;
         }
+
+        ll half = len / 2;
+
+        ll cnt1 = prefOne[r] - prefOne[l - 1];
+        ll cnt2 = prefTwo[r] - prefTwo[l - 1];
+        ll cnt3 = prefThree[r] - prefThree[l - 1];
+
+        max({cnt1, cnt2, cnt3}) == half ? yes : no;
     }
 }
 
