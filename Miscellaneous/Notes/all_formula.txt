@@ -12,3 +12,17 @@
 
 -> Find the Mid of a Binary Search?
 : Start + (End - Start) / 2
+-------------------------------------------------------------------------------------------------------------------------------
+
+Arithmetic Progression: is a sequence of numbers where the difference between any two consecutive numbers in constant. e.g. 3, 7, 11, 15
+------------------------
+The formula is  a+.......+b = (n*(a+b))/2
+                ------------
+                  n Numbers
+where a is the first number, b is the last number and n is the amount of numbers:
+               3+7+11+15 = (4*(3+15))/2 = 36
+
+Geometric Progression: A geometric progression is a sequence of numbers where the ratio between any two consecutive numbers is constant. e.g. 3, 6, 12, 24  is a geometric progression with constant 2. The sum of a geometric progression can be calculated using the formula:
+                                                 a+a*k+a*k^2+..............b = (b*k-a)/k-1
+where a is the first number, b is the last number and the ratio between consecutive numbers is k. e.g.
+                                                 3+6+12+24= (24*2-3)/2-1 = 45
