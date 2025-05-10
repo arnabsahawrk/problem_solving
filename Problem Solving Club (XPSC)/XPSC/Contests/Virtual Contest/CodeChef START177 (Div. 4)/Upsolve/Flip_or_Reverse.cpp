@@ -34,27 +34,37 @@ void arnabsahawrk()
     string A, B;
     cin >> A >> B;
 
-    ll badIndices = 0;
-    rep(i, 0, n) if (A[i] != B[i]) badIndices++;
+    vector<tuple<int, int, int>> ans;
+    ll i = 0;
+    while (i < n)
+    {
+        if (A[i] == B[i])
+        {
+            i++;
+            continue;
+        }
 
-    if (!badIndices)
-    {
-        out(0);
-        return;
+        if (i + 1 == n || A[i + 1] == B[i + 1])
+        {
+            ans.eb(make_tuple(1, i + 1, i + 1));
+            i++;
+            continue;
+        }
+
+        if (A[i] == A[i + 1])
+        {
+            ans.eb(make_tuple(1, i + 1, i + 2));
+            i += 2;
+        }
+        else
+        {
+            ans.eb(make_tuple(2, i + 1, i + 2));
+            i += 2;
+        }
     }
 
-    ll h = (n + 2 - 1) / 2;
-    if (badIndices <= h)
-    {
-        out(badIndices);
-        rep(i, 0, n) if (A[i] != B[i]) cout << 1 << " " << i + 1 << " " << i + 1 << endl;
-    }
-    else
-    {
-        cout << n - badIndices + 1 << endl;
-        cout << 2 << " " << 1 << " " << n << endl;
-        rep(i, 0, n) if (A[i] == B[i]) cout << 1 << " " << i + 1 << " " << i + 1 << endl;
-    }
+    cout << sz(ans) << endl;
+    each(x, ans) cout << get<0>(x) << " " << get<1>(x) << " " << get<2>(x) << endl;
 }
 
 int main()
