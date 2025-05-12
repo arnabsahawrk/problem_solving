@@ -114,6 +114,18 @@ __builtin_popcountll(n); //for long long value
 
 __lg(n) //return the highest setbit. the leftmost element that is on. time complexity: O(1)
 
+xor operation
+--------------
+a^b = c
+a^c = b
+b^c = a
+
+a=13, b=22, c=27
+
+13^22=27
+13^27=22
+22^27=13
+
 
 *always when working with bit think the output as bit not decimal then it easier to get notion of output.
 *consecutive algorithms/adhoc problems newly idea generate these problems are mostly related to bit manipulation. 
