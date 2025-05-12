@@ -1,0 +1,124 @@
+4 types number system
+------------------------
+*binary: base(2) | 0, 1
+*octal: base(8) | 0 - 7
+*decimal: base(10) | 0 - 9
+*hexadecimal: base(16) | 0 - F
+
+decimal to binary
+------------------
+2|11|1 - L.S.B (Less significant bit)
+2|5|1
+2|2|0
+  1 - M.S.B (Most significant bit)
+ <---------
+right  left
+1011 (11)
+
+binary to decimal
+--------------------
+1 0 1 1
+| | | |
+3 2 1 0
+
+= 2^3*1 + 2^2*0 + 2^1*1 + 2^0*1    (observation when there is 0 I can't take the value of that position)
+= 8 + 0 + 2 + 1 = 11
+
+A shortcut for binary to decimal
+------------------------------------
+3   2   1   0
+|   |   |   |
+2^3 2^2 2^1 2^0
+|    |   |   |
+8    4   2   1
+|    |   |   |
+1    0   1   1
+=11
+*The rightmost of odd value always 1 and even 0. So, when I have to make odd value I have to take 0 position because there is only one odd value.
+
+(22)
+16 8 4 2 1
+|  | | | |
+1  0 1 1 0
+
+BOOLEAN ALGEBRA
+------------------
+1 0 -> boolean/bit, true/false.
+
+boolean operation
+------------------
+*AND (&) - when all bits are 1 the output is 1, if any 0 found the output is 0.
+*OR  (|) - when all bits are 0 the output is 0, if any 1 found the output is 1.
+*NOT (~) - if the bit is 0 it toggle into 1, vice versa.
+*XOR (^) - when there is odd number 1 the output is 1 and when there is even number 1 the output 0. 0 don't make any effect in XOR operation.
+
+BITWISE OPERATION
+-------------------
+*AND (&)
+*OR  (|)
+*NOT (~)
+*XOR (^)
+*LEFT SHIFT (<<) - shift the bit left side (every shift it double down its previous value)
+*RIGHT SHIFT (>>) - shift the bit right side (every shift it half its previous value)
+
+a=5, b=14
+answer = (a&b)   //4
+
+0 1 0 1 ->5
+1 1 1 0 ->14
+-------------
+0 1 0 0 ->4  AND (a&b)
+1 1 1 1 ->15 OR (a|b)
+1 0 1 1 ->11 XOR (a^b)
+
+(11<<1) -> 22
+(11>>1) -> 5
+
+SHORTCUT (2 POWER)
+--------------------
+*(1<<4) -> 16
+*(1LL<<45) (for long long output)
+
+bitwise operation
+-------------------
+//check_kth_bit_on_or_off
+//print_on_and_off_bits
+//turn_on_kth_bit
+//turn_off_kth_bit
+//toggle_kth_bit
+
+check_kth_bit_on_or_off
+------------------------
+(n>>k)&1 - if first shift the kth element right most then & with 1, if kth is 1 (1&1)->1 if kth is 0 (0&1)->0
+
+print_on_and_off_bits
+------------------------ 
+loop  -> (n>>i)&1
+
+turn_on_kth_bit
+----------------
+(n|(1<<k))
+
+turn_off_kth_bit
+-------------------
+(n&(~(1<<k)))
+
+toggle_kth_bit
+----------------
+(n^(1<<k))
+
+In-built C++ bitwise functions
+-----------------------------------
+__builtin_popcount(n);    //how many on bits are there int count it in constant time complexity. O(1)
+__builtin_popcountll(n); //for long long value
+
+__lg(n) //return the highest setbit. the leftmost element that is on. time complexity: O(1)
+
+
+*always when working with bit think the output as bit not decimal then it easier to get notion of output.
+*consecutive algorithms/adhoc problems newly idea generate these problems are mostly related to bit manipulation. 
+*Bit manipulation problems generally don't have any pattern.
+*when in problem statement said multiple output exist then the output I have to construct in way and my output could be not match with others.
+
+*Permutation: 1 to N each element one time but in any order is possible.
+*MEX: minimum excluded value. (0, 1)->1, (2, 3, 4)->0, (0, 2, 5, 4)->1
