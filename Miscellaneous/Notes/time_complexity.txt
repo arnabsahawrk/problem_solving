@@ -1,0 +1,39 @@
+Complexity Classes
+---------------------
+O(1) - CONSTANT TIME. Direct formula that calculates the answer.
+
+O(logN) - LOGARITHMIC. Often halves the input size at each step. log2N equals the number of times n must be divided by 2 to get 1.
+
+O(√n) - SQUARE ROOT ALGORITHM. Is slower than O(logN) but faster than O(n). √n = n/√n, so the square root ties, in some sense, in the middle of the input.
+
+O(n) - LINEAR. It is usually necessary to access each input element at least once before reporting the answer.
+
+O(NlogN) - Efficient SORTING algorithm is O(NlogN). Another possibility is that the algorithm use data structure where each operation takes O(logN) time.
+
+O(n²) - QUADRATIC. Often contains two nested loops.
+
+O(n^3) - CUBIC. Often contains three nested loops.
+
+O(2^n) - the algorithm iterates through all subsets of the input element e.g. {1,2,3} are ∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, and {1,2,3}.
+
+O(n!) - the algorithm iterates through all permutations of the input elements. e.g. {1,2,3} are (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2) and (3,2,1).
+
+An algorithm is polynomial if its time complexity is at most O(n^k) where k is a constant. All the above time complexities except O(2^n) and O(n!) are polynomial.
+
+Estimating Efficiency
+-------------------------
+Modern computer can perform some hundreds of millions of operations in a second. e.g. input size n=10^5. If the time complexity is O(n^2), the algorithm will perform about (10^5)^2 = 10^10 operations. This should take at least some tens of seconds. So the algorithm seems to be too slow for solving the problem.
+
+input size            required time complexity
+-----------          ----------------------------
+n<=10                      O(n!)
+
+n<=20                      O(2^n)
+
+n<=500                     O(n^3)
+
+n<=5000                    O(n²)
+
+n<=10^6               O(NlogN) or O(n)
+
+n is large             O(1) or O(logN)
