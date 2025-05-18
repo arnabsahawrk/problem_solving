@@ -1,0 +1,14 @@
+C++ search functions (in sorted order)
+---------------------
+*lower_bound: returns a pointer to the first array element whose value is at least X.
+
+*upper_bound: returns a pointer to the first array element whose value is larger than X.
+
+*equal_range: returns both above pointers.
+
+auto a = lower_bound(array, array+n, x);
+auto b = upper_bound(array, array+n, x);
+cout<<b-a<<"\n";
+
+auto r = equal_range(array, array+n, x);
+cout<<r.second - r.first<<"\n";
