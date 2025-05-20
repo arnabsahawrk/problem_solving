@@ -1,0 +1,7 @@
+*Bit Shift (1LL << k):
+-----------------------
+This expression in parsed as (1LL << k). While it correctly computes 2^(k) for small values of k, it causes undefined behavior when k is large (typically k >= 65) because shifting by more than the number of bits in long long (usually 64 bits) is not defined in c++.
+
+*pow(2LL, k):
+--------------
+The pow function computes the result in floating point. Although precision might be an issue for huge exponents but still it's working correctly by effectively treating the result as infinity when 2^(k) exceeds the range.
