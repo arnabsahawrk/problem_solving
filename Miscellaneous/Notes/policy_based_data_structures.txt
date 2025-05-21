@@ -1,0 +1,28 @@
+Policy Based Data Structures
+------------------------------
+- Ordered Set
+- Based on Red Black Trees
+- Include in
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+#define pbds tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update>
+
+- less<ll>, greater<ll>, less_equal<ll>, greater_equal<ll>
+
+- normal set operations
+- random access in O(logN)
+- number of items less than k in O(logN)
+
+Code
+-----
+It has two key function: O(logN)
+
+pbds s
+
+- s.order_of_key(k) : number of items strictly smaller than k. O(logN)
+
+- s.find_by_order(k): k-th element in a set (counting from zero). returns pointer (0-base indexed). O(logN)
+
+- Rest all of are all set operations.
