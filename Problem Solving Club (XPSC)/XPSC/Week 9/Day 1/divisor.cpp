@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 05/21/2025 [23:50:46]   */
+/*   Author: Arnab Saha  Date: 05/25/2025 [02:19:35]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -28,38 +28,30 @@ using namespace __gnu_pbds;
 
 const int inf = 1e9;
 const ll linf = 1e18;
-const int mod = 998244353;
+const int mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
     ll n;
     cin >> n;
 
-    string s;
-    cin >> s;
-
-    vll dp(n + 1, 0);
-    dp[0] = 1;
-
-    auto check = [&](ll i)
+    for (int i = 1; i <= n; i++)
     {
-        if (i + 3 >= n)
-            return false;
+        if (n % i == 0)
+            cout << i << " ";
+    } // time complexity: O(n)
+    cout << endl;
 
-        return s[i] == s[i + 2] && s[i + 1] == s[i + 3] && s[i] != s[i + 1];
-    };
-
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i * i <= n; i++)
     {
-        dp[i + 1] = (dp[i + 1] + dp[i]) % mod;
-
-        if (check(i))
+        if (n % i == 0)
         {
-            dp[i + 3] = (dp[i + 3] + dp[i]) % mod;
-        }
-    }
+            cout << i << " ";
 
-    out(dp[n]);
+            if (n / i != i)
+                cout << (n / i) << " ";
+        }
+    }// time complexity: O(√n)
 }
 
 int main()
@@ -67,7 +59,7 @@ int main()
     fast_IO;
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     while (tc--)
         arnabsahawrk();
 

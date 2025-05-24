@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 05/21/2025 [23:50:46]   */
+/*   Author: Arnab Saha  Date: 05/24/2025 [20:40:28]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -28,38 +28,52 @@ using namespace __gnu_pbds;
 
 const int inf = 1e9;
 const ll linf = 1e18;
-const int mod = 998244353;
+const int mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
     ll n;
     cin >> n;
 
-    string s;
-    cin >> s;
+    vll arr(n);
+    each(i, arr) cin >> i;
+    sort(all(arr));
 
-    vll dp(n + 1, 0);
-    dp[0] = 1;
+    deque<ll> dq;
+    each(x, arr) dq.eb(x);
 
-    auto check = [&](ll i)
+    ll x = 0;
+    rep(i, 0, n)
     {
-        if (i + 3 >= n)
-            return false;
+        ll mx = *max_element(all(dq)), mn = *min_element(all(dq));
 
-        return s[i] == s[i + 2] && s[i + 1] == s[i + 3] && s[i] != s[i + 1];
-    };
-
-    for (int i = 0; i < n; i++)
-    {
-        dp[i + 1] = (dp[i + 1] + dp[i]) % mod;
-
-        if (check(i))
+        if ((mx + mn) % 2 == 0)
+            break;
+        else
         {
-            dp[i + 3] = (dp[i + 3] + dp[i]) % mod;
+            x++;
+            dq.pop_front();
         }
     }
 
-    out(dp[n]);
+    deque<ll> dq2;
+    each(y, arr) dq2.eb(y);
+
+    ll y = 0;
+    rep(i, 0, n)
+    {
+        ll mx = *max_element(all(dq2)), mn = *min_element(all(dq2));
+
+        if ((mx + mn) % 2 == 0)
+            break;
+        else
+        {
+            y++;
+            dq2.pop_back();
+        }
+    }
+
+    out(min(x, y));
 }
 
 int main()

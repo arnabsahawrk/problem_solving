@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 05/21/2025 [23:50:46]   */
+/*   Author: Arnab Saha  Date: 05/25/2025 [00:42:22]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -28,38 +28,22 @@ using namespace __gnu_pbds;
 
 const int inf = 1e9;
 const ll linf = 1e18;
-const int mod = 998244353;
+const int mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
-    ll n;
-    cin >> n;
+    ll n, x;
+    cin >> n >> x;
 
-    string s;
-    cin >> s;
-
-    vll dp(n + 1, 0);
-    dp[0] = 1;
-
-    auto check = [&](ll i)
+    if (x >= n)
     {
-        if (i + 3 >= n)
-            return false;
-
-        return s[i] == s[i + 2] && s[i + 1] == s[i + 3] && s[i] != s[i + 1];
-    };
-
-    for (int i = 0; i < n; i++)
-    {
-        dp[i + 1] = (dp[i + 1] + dp[i]) % mod;
-
-        if (check(i))
-        {
-            dp[i + 3] = (dp[i + 3] + dp[i]) % mod;
-        }
+        out(0);
+        return;
     }
 
-    out(dp[n]);
+    n -= x;
+
+    out((n + 4 - 1) / 4);
 }
 
 int main()
