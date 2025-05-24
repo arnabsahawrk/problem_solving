@@ -1,0 +1,23 @@
+C++11 introduced lambda expressions to allow inline functions which can be used for short snippet of code that are not going to be reused. Therefore, they do not require a name. They are mostly used in STL algorithms as callback functions.
+
+Capture Clause
+----------------
+*[&]: Capture All External Variables by reference.
+*[=]: Capture all external variables by value
+
+vector<int> a;
+vector<int> b;
+
+*[&b]: Capture b by reference.
+*[=a]: Capture a by value.
+
+*[=a, &b], [=, &b]: Capture a/or all by value and b by reference.
+
+auto solve = [&]() { code; }
+[](){}
+
+sort(a.begin(), a.end() [](int x, int y){return a>=b;})
+
+*all_off()   -> return true if all the value satisfied the condition, otherwise false.
+*any_off()   -> return true if any of the value satisfied the condition, otherwise false.
+*none_off()  -> return true if none of the value satisfied the condition, otherwise false.
