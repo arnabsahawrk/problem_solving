@@ -1,0 +1,111 @@
+1. Divisors -> O(n), O(√n)
+2. Primality Test
+3. GCD & LCM
+4. Goldbach's Conjecture
+5. Modular Arithmetic
+
+Divisors
+-----------
+12-> 1, 2, 3, 4, 6, 12 (No divisor exceed the 12)
+n%x == 0
+a*b <= n 
+or, a*a <=n 
+or, a*a == n 
+or, a^2 == n 
+∴ a = √n
+
+We can extract all 12 divisor O(n) and O(√n) time complexity.
+√12 = 6, sqrt(n) or i*i <= n 
+
+Primality Test
+---------------
+Check weather a number prime or not.
+Prime -> 5(1, 5), 7(1, 7), 11(1, 11).
+1 is special number.
+
+GCD & LCM
+---------------
+GCD - Greatest Common Divisor
+
+16 - 1, 2, 4, 8, 16
+24 - 1, 2, 3, 4, 6, 8, 12, 24
+GCD of 16 & 24 -> 8
+
+built-in c++ function -> __gcd(a, b), O(log(min(a,b))) time complexity.
+gcd's natural value is 0.
+
+LCM - Least Common Multiple
+
+16 - 16, 32, 48.......
+24 - 24, 48, 72........
+LCM of 16 & 24 -> 48
+
+gcd(a, b) * lcm(a, b) = a * b
+gcd(16, 24) * lcm (16, 24) = 16 * 24
+    8             48       = 16 * 24
+          384              =  384
+
+or, lcm (a, b) = (a*b) / gcd(a, b)
+(a*b)/gcd(a,b) == a/gcd(a,b) * b
+
+Goldbach's Conjecture
+-------------------------
+Goldbach's Conjecture is one of the oldest and best - known unsolved problems in number theory and all of mathematics. It states that every even natural number greater than 2 is the sum of two prime numbers.
+
+The Conjecture has been shown to hold for all integer less than 4*10^8 but remains unproven despite considerable effort.
+
+4 = 2 + 2, 6 = 3 + 3, 8 = 4 + 5, 10 = 3 + 7, 5 + 5, and 12 = 5 + 7.
+
+any odd number to (-2) become prime number. Not all the time. e.g. 25 - 2 = 23 is Prime Number but 27 - 2 = 25 isn't a prime number.
+
+Modular Arithmetic (%) remainder
+---------------------------------
+In a systematic way to manipulate the large value.
+In any value we mod the result will 0 to mod-1.
+
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+
+Addition
+-----------
+(a+b) % mod
+or, (a%mod + b%mod) % mod
+
+Subtraction
+-------------
+(a-b) % mod
+or, (a%mod, - b%mod)%mod
+- there is a issue with Subtraction ( sometime it goes -negative value, then we have to take in positive range then again whole mod.)
+
+Multiplication
+----------------
+(a*b) % mod
+or, (a%mod * b%mod) %mod
+
+Example
+--------
+        mod = 1e9+7
+(a*b*c)%mod -> (10^9 * 10^9 * 10^9) % mod
+                10^27 exceed long long
+
+(((a%mod * b%mod)%mod)*c%mod)%mod
+(((10^9 * 10^9)%1e9+7)*10^9 * 1e9+7)%1e9+7
+((10^18 % 1e9+7)*10^9)%1e9+7
+(10^9 * 10^9)%1e9+7
+10^18 % 1e9+7
+= 10^9
+
+Binary Exponentiation     (First Exponentiation)
+---------------------------------------------------
+any of decimal value we can write power of 2. The concept 2 power.
+
+3^11                        11->(1011)
+= 3^2^0 * 3^2^1 * 3^2^3
+= 3^1 * 3^2 * 3^8
+= 17147
+
+
+const value operation get faster.
+
