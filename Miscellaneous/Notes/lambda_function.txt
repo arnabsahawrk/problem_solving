@@ -21,3 +21,4 @@ sort(a.begin(), a.end() [](int x, int y){return a>=b;})
 *all_off()   -> return true if all the value satisfied the condition, otherwise false.
 *any_off()   -> return true if any of the value satisfied the condition, otherwise false.
 *none_off()  -> return true if none of the value satisfied the condition, otherwise false.
+*iota(a.begin(), a.end(), 0) -> it will fill the array 0 to N (even it works for latter 'a' to N).
