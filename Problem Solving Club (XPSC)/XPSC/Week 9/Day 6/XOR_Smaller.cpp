@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 05/31/2025 [01:36:30]   */
+/*   Author: Arnab Saha  Date: 05/30/2025 [23:57:25]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -36,27 +36,33 @@ int main()
 
     auto arnabsahawrk = [&]()
     {
-        ll n, k;
-        cin >> n >> k;
+        ll n;
+        cin >> n;
 
-        string s;
-        cin >> s;
-
-        ll z = 0, o = 0;
-        rep(i, 0, n) z += (s[i] == '0'), o += (s[i] == '1');
-
-        ll ans = (n / 2) - (z & 1);
-        ll mn = min(z, o);
-
-        while (ans > k && mn > 1)
+        vll bits(31, 0);
+        ll mx = 0;
+        rep(i, 0, n)
         {
-            ans -= 2, mn -= 2;
+            ll x;
+            cin >> x;
+
+            mx = max(mx, __lg(x));
+
+            rep(i, 0, __lg(x) + 1)
+            {
+                if ((x >> i) & 1)
+                    bits[i]++;
+            }
         }
 
-        if (ans == k)
-            out("YES");
-        else
-            out("NO");
+        ll ans = 0;
+        rep(i, 0, mx + 1)
+        {
+            if (bits[i] == n)
+                ans += (1 << i);
+        }
+
+        out(ans);
     };
 
     int tc = 1;

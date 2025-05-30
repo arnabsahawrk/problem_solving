@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 05/31/2025 [01:36:30]   */
+/*   Author: Arnab Saha  Date: 05/31/2025 [02:11:49]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -36,27 +36,44 @@ int main()
 
     auto arnabsahawrk = [&]()
     {
-        ll n, k;
-        cin >> n >> k;
+        ll n;
+        cin >> n;
 
-        string s;
-        cin >> s;
+        multiset<ll> row, col;
+        vector<pll> v(n);
 
-        ll z = 0, o = 0;
-        rep(i, 0, n) z += (s[i] == '0'), o += (s[i] == '1');
-
-        ll ans = (n / 2) - (z & 1);
-        ll mn = min(z, o);
-
-        while (ans > k && mn > 1)
+        rep(i, 0, n)
         {
-            ans -= 2, mn -= 2;
+            cin >> v[i].ff >> v[i].ss;
+
+            row.insert(v[i].ff);
+            col.insert(v[i].ss);
         }
 
-        if (ans == k)
-            out("YES");
-        else
-            out("NO");
+        if (n == 1)
+        {
+            out(1);
+            return;
+        }
+
+        ll ans = linf;
+        rep(i, 0, n)
+        {
+            row.erase(row.find(v[i].ff));
+            col.erase(col.find(v[i].ss));
+
+            ll r = (*row.rbegin() - *row.begin()) + 1, c = (*col.rbegin() - *col.begin()) + 1;
+
+            if (r * c > n - 1)
+                ans = min(ans, (r * c));
+            else
+                ans = min({ans, (r * c + r), (r * c + c)});
+
+            row.insert(v[i].ff);
+            col.insert(v[i].ss);
+        }
+
+        out(ans);
     };
 
     int tc = 1;

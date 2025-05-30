@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 05/31/2025 [01:36:30]   */
+/*   Author: Arnab Saha  Date: 05/31/2025 [01:23:01]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -36,27 +36,15 @@ int main()
 
     auto arnabsahawrk = [&]()
     {
-        ll n, k;
-        cin >> n >> k;
-
         string s;
         cin >> s;
 
-        ll z = 0, o = 0;
-        rep(i, 0, n) z += (s[i] == '0'), o += (s[i] == '1');
+        ll n = stoi(s);
 
-        ll ans = (n / 2) - (z & 1);
-        ll mn = min(z, o);
-
-        while (ans > k && mn > 1)
-        {
-            ans -= 2, mn -= 2;
-        }
-
-        if (ans == k)
-            out("YES");
+        if (round(sqrt(n)) * round(sqrt(n)) == n)
+            cout << '0' << " " << sqrt(n) << endl;
         else
-            out("NO");
+            out(-1);
     };
 
     int tc = 1;
