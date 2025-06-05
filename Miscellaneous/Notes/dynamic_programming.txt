@@ -7,3 +7,7 @@ There are two uses for dynamic programming:
 
 • Counting the number of solutions: We want to calculate the total number of possible solutions.
 ---------------------------------------
+
+Using memoization
+---------------------
+The idea of dynamic programming is to use memoization to efficiently calculate values of a recursive function. This means that the values of the function are stored in an array after calculating them. For each parameter, the value of the function is calculated recursively only once, and after this, the value can be directly retrieved from the array.
