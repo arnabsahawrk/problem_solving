@@ -1,0 +1,11 @@
+Whenever we see a problem having rotation in an array, for that particular problem we have magical an operator called modulo (%).
+
+Fraction: Denominator represents the number of equal parts in a whole and the numerator represents how many parts are being considered.
+----------
+
+Denominator: The bottom number of a fraction.
+------------
+Numerator: The top number of a fraction.
+-----------
+
+2/5: here 5 is Denominator and 2 is numerator.
