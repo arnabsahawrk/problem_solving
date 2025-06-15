@@ -1,3 +1,13 @@
+Time Complexity -
+n <= 10     : O(n!)
+n <= 5*10   : O(2^n)
+n <= 5*10^2 : O(n^3)
+n <= 5*10^3 : O(n^2)
+n <= 10^6   : O(n*logn) / O(n)
+n  > 10^8   : O(logn) / O(1)
+----------------------------------
+
+
 Complexity Classes
 ---------------------
 O(1) - CONSTANT TIME. Direct formula that calculates the answer.
