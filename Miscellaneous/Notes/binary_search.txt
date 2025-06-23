@@ -1,0 +1,12 @@
+Binary Search On Answer
+----------------------------
+Monotonic Function: The function which is increasing over the time aspect of value or decreasing called monotonic function. In some point there could be equal but there isn't any point that happens increase and decrease both. Either only increasing or decreasing. In short, in monotonic behavior arr values are sorted.
+
+Monotonic function used for binary search on answer. The problem/scenario which follow the monotonic behavior. We can utilize this behavior, for solving various problem with logN complexity.
+
+In binary search, most important thing is defined the search space/search interval.
+
+Minimizing the maximum or maximizing the minimum, k-th positive number, largest and smallest these type of problems we can use bs.
+
+* How many numbers that not divisible by n in a range we could find it out with this formula, n=3, range=13.
+formula: range - (range/n) -> 13 - (13/3) = 13 - 4 = 9. There is 9 numbers in a range of 13 we can't divide it by 3. For instance: {1, 2, 4, 5, 7, 8, 10, 11, 13}

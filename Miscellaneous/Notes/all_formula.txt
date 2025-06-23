@@ -26,3 +26,17 @@ Geometric Progression: A geometric progression is a sequence of numbers where th
                                                  a+a*k+a*k^2+..............b = (b*k-a)/k-1
 where a is the first number, b is the last number and the ratio between consecutive numbers is k. e.g.
                                                  3+6+12+24= (24*2-3)/2-1 = 45
+
+* How many numbers that not divisible by n in a range we could find it out with this formula, n=3, range=13.
+formula: range - (range/n) -> 13 - (13/3) = 13 - 4 = 9. There is 9 numbers in a range of 13 we can't divide it by 3. For instance: {1, 2, 4, 5, 7, 8, 10, 11, 13}
+
+How many sum we make for a range to a range:
+
+1 -> 1 {1}
+
+2 -> 1 to 3  {1 + 2} = 3 here we can make every sum from 1 to 3
+
+3 -> 1 to 6  {1 + 2 + 3} = 6 here we can make every sum from 1 to 6
+
+4-> 1 to 10  {1 + 2 + 3 + 4} = 10 here we can make every sum from 1 to 10
+ans so on.
