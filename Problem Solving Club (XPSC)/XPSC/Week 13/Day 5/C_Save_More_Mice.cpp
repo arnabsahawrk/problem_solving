@@ -8,52 +8,48 @@ using namespace __gnu_pbds;
 #define pbds tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update>
 #define checkmate return 0;
 
-using ll = long long;
-using pll = pair<ll, ll>;
-using vll = vector<ll>;
-using vb = vector<bool>;
-using vs = vector<string>;
-
-#define pb push_back
-#define eb emplace_back
-#define ff first
-#define ss second
-#define all(x) (x).begin(), (x).end()
-#define sz(x) (ll)(x).size()
-#define rep(i, a, b) for (ll i = (a); i < (b); ++i)
-#define rrep(i, a, b) for (ll i = (a); i >= (b); --i)
-#define each(x, a) for (auto &x : a)
-#define rin(v) each(i, v) cin >> i
-#define out(x) cout << x << endl
-#define endl '\n'
-
-const ll inf = 1e9;
-const ll linf = 1e18;
-const ll mod = 1e9 + 7;
-
 void arnabsahawrk()
 {
-    ll n, k;
+    int n, k;
     cin >> n >> k;
 
-    vll arr(k);
-    rin(arr);
+    vector<int> arr(k + 1);
+    for (int i = 1; i <= k; i++)
+        cin >> arr[i];
 
-    sort(arr.rbegin(), arr.rend());
+    sort(arr.begin(), arr.end());
 
-    ll sum = 0, count = 0;
-    rep(i, 0, k)
+    auto ok = [&](int m) -> bool
     {
-        if (((n - arr[i]) + sum) < n)
+        long long sum = 0;
+        for (int i = k; i >= m; i--)
         {
-            sum += (n - arr[i]);
-            count++;
+            if (((n - arr[i]) + sum) < n)
+                sum += (n - arr[i]);
+            else
+                return false;
+        }
+
+        return true;
+    };
+
+    int l = 1, r = k, ans = 0, mid;
+    while (l <= r)
+    {
+        mid = l + (r - l) / 2;
+
+        if (ok(mid))
+        {
+            ans = mid;
+            r = mid - 1;
         }
         else
-            break;
+        {
+            l = mid + 1;
+        }
     }
 
-    out(count);
+    cout << k - ans + 1 << endl;
 };
 
 int main()
@@ -62,7 +58,7 @@ int main()
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    ll tc = 1;
+    int tc = 1;
     cin >> tc;
     while (tc--)
         arnabsahawrk();

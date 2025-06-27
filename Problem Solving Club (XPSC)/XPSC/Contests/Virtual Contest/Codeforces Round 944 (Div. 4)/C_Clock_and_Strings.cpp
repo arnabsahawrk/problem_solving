@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 06/24/2025 [21:49:47]   */
+/*   Author: Arnab Saha  Date: 06/26/2025 [18:47:54]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -33,25 +33,55 @@ const ll mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
-    ll n;
-    cin >> n;
+    ll a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-    vll arr(n);
-    rin(arr);
+    ll x = max(a, b), y = min(a, b);
 
-    rep(i, 1, n)
+    ll xy = abs(x - y);
+
+    bool clockWise = false;
+    if (xy <= 6)
+        clockWise = true;
+
+    vll arr;
+    if (clockWise)
     {
-        if (abs(arr[i] - arr[i - 1]) <= 1)
+        for (int i = y; i <= x; i++)
         {
-            out(0);
-            return;
+            arr.eb(i);
         }
     }
-
-    if (is_sorted(all(arr)) || is_sorted(arr.rbegin(), arr.rend()))
-        out(-1);
     else
-        out(1);
+    {
+        for (int i = 1; i <= y; i++)
+            arr.eb(i);
+        for (int i = x; i <= 12; i++)
+            arr.eb(i);
+    }
+
+    bool f = false, r = false;
+    rep(i, 0, sz(arr))
+    {
+        if (arr[i] == c)
+        {
+            // cout << arr[i] << " " << c << " ";
+            f = true;
+        }
+        if (arr[i] == d)
+        {
+            // cout << arr[i] << " " << d << " ";
+            r = true;
+        }
+
+        // cout << arr[i] << " ";
+    }
+    // cout << endl;
+
+    if ((f && !r) || (!f && r))
+        out("YES");
+    else
+        out("NO");
 };
 
 int main()

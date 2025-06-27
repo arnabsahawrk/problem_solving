@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 06/24/2025 [21:49:47]   */
+/*   Author: Arnab Saha  Date: 06/26/2025 [18:32:43]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -33,25 +33,31 @@ const ll mod = 1e9 + 7;
 
 void arnabsahawrk()
 {
-    ll n;
-    cin >> n;
+    string s;
+    cin >> s;
 
-    vll arr(n);
-    rin(arr);
-
-    rep(i, 1, n)
+    bool f = true;
+    ll k;
+    rep(i, 0, sz(s))
     {
-        if (abs(arr[i] - arr[i - 1]) <= 1)
+        if (s[i] != s.front())
         {
-            out(0);
-            return;
+            f = false;
+            k = i;
+            break;
         }
     }
 
-    if (is_sorted(all(arr)) || is_sorted(arr.rbegin(), arr.rend()))
-        out(-1);
-    else
-        out(1);
+    if (f)
+    {
+        out("NO");
+        return;
+    }
+
+    swap(s[0], s[k]);
+
+    out("YES");
+    out(s);
 };
 
 int main()

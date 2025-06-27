@@ -10,3 +10,7 @@ Minimizing the maximum or maximizing the minimum, k-th positive number, largest 
 
 * How many numbers that not divisible by n in a range we could find it out with this formula, n=3, range=13.
 formula: range - (range/n) -> 13 - (13/3) = 13 - 4 = 9. There is 9 numbers in a range of 13 we can't divide it by 3. For instance: {1, 2, 4, 5, 7, 8, 10, 11, 13}
+
+Binary Search: Max-Min, Min-Max first approach should be binary search. Also when in a problem feel that answer could be this one or that one that time also binary search should be first approach.
+
+In binary search problem there are few edge cases that can be always produce wrong answer: range, overflow, index, search-space.
