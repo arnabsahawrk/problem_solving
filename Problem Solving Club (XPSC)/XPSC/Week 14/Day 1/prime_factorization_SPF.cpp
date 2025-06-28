@@ -1,4 +1,4 @@
-/*   Author: Arnab Saha  Date: 06/28/2025 [12:30:41]   */
+/*   Author: Arnab Saha  Date: 06/28/2025 [13:22:34]   */
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -31,24 +31,24 @@ const ll inf = 1e9;
 const ll linf = 1e18;
 const ll mod = 1e9 + 7;
 
-vll allPrimes;
 void arnabsahawrk()
 {
     ll n;
     cin >> n;
 
-    ll idx = 0;
-    while (n > 1)
+    for (int i = 2; i * i <= n; i++)
     {
-        while (!(n % allPrimes[idx]))
+        while (n % i == 0)
         {
-            cout << allPrimes[idx] << " ";
-            n /= allPrimes[idx];
+            cout << i << " ";
+            n /= i;
         }
-
-        idx++;
     }
-    cout << endl;
+
+    if (n > 1)
+        cout << n << endl;
+    else
+        cout << endl;
 };
 
 int main()
@@ -56,22 +56,6 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-
-    vb sieve(1e6 + 5, true);
-    for (ll i = 2; i * i <= sz(sieve); i++)
-    {
-        if (sieve[i])
-        {
-            for (ll j = i * i; j < sz(sieve); j += i)
-                sieve[j] = false;
-        }
-    }
-
-    rep(i, 2, sz(sieve))
-    {
-        if (sieve[i])
-            allPrimes.eb(i);
-    }
 
     ll tc = 1;
     cin >> tc;
