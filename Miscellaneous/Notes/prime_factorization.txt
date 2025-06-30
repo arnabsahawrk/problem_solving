@@ -1,0 +1,104 @@
+Number Theory
+----------------
+1. Prime, 2. Prime Factorization, 3. Sieve Of Eratosthenes.
+
+* In Number Theory, most of the problems can be solved by using prime or prime factorization.
+
+Sieve Algorithm
+-------------------
+* Sieve algorithm predefined all the prime numbers before hand in a range with O(nloglogn) time complexity.
+
+/* vll sieve(1e7);
+for (ll i = 2; i * i <= sz(sieve); i++)
+{
+   if (sieve[i])
+    {
+     for (ll j = i * i; j < sz(sieve); j += i)
+        sieve[j] = false;
+    }
+} */
+
+Prime Factorization
+-----------------------
+* Any digit we can write a multiple of prime numbers, except 1. Prime Factorization is a skeleton view of a digit. The smallest number that can't be divide more than that.
+
+30 -> 2 * 3 * 5.   30/2=15, 15/3=5, 5/5=1.
+18 -> 2 * 3 * 3.   18/2=9, 9/3=3, 3/3=1.
+
+Using Prime Factorization we can extract divisor, number of divisors, sum of divisors, gcd and lcm.
+
+SPF(Smallest Prime Factor) O(√n)
+------------------------------------
+* In any digit the smallest divisor is a prime number.
+
+/*
+ll count = 0;
+for (ll j = 2; j * j <= n; j++)
+{
+    if (n % j == 0)
+        count++;
+
+    while (n % j == 0)
+        n /= j;
+}
+
+if (n > 1)
+    count++;
+/*
+
+* There are 3 divisors exist only in the square of prime number, in any other case there aren't any numbers that has 3 divisors.
+
+2^2 = 4. 4-> 1, 2, 4 (4 has 3 divisors).
+5^2 = 25. 25-> 1, 5, 25. (25 has 3 divisors).
+
+* 4 divisors only for prime qube or two different prime numbers when get multiplied.
+
+5^3 = 125. 125-> 1, 5, 25, 125. (125 has 4 divisors).
+5*7 = 35. 35-> 1, 5, 7, 35. (35 has 4 divisors).
+
+Count No. of divisors
+-----------------------
+-> p1^e1 * p2^e2 * p3^e3 *........pn^en.
+
+18 -> 2^1 * 3^2
+(e1+1)*(e2+1) = (1+1)*(2+1) = (2*3) = 6. 18 has 6 divisors.
+
+100 -> 2^2 * 5^2
+(e2+1) * (e2+1) = (2+1)*(2+1) = (3*3) = 9. 100 has 9 divisors.
+
+7*7=49. 7^1 * 7^1 -> p1*p1 -> p^2 -> (2+1)=3. 49 has 3 divisors. Because it is prime square number.
+
+5^3=125 -> 5^1 * 5^1 * 5^1 -> p1*p1*p1 -> p^3 -> (3+1) = 4. 125 has 4 divisors. Because it is qube of prime number.
+
+5*7=35 -> 5^1 * 7^1 -> p1*q1 -> (1+1)*(1+1) = 4. 35 has 4 divisors. Because it is a multiple of two different prime numbers.
+
+GCD and LCM using Prime Factorization
+---------------------------------------
+a = p1^e1 * p2^e2 * p3^e3.......pn^en.
+b = p1^E1 * p2^E2 * p3^E3.......pn^En.
+
+gcd = p1^min(e1, E1) * p2^min(e2, E2).........
+lcm = p1^max(e1, E1) * p2^max(e2, E2).........
+
+a=36, b=24, then:
+
+*For gcd we take the smallest one:
+36 -> 2^2 * 3^2
+24 -> 2^3 * 3^1
+------------------
+   -> 2^2 * 3^1 = 12 -> 2^2 * 3^1 (12 Prime Factorization).
+36 and 24 GCD is 12.
+
+*For LCM we take the largest one:
+36 -> 2^2 * 3^2
+24 -> 2^3 * 3^1
+------------------
+   -> 2^3 * 3^2 = 72 -> 2^2 * 3^2 (72 Prime Factorization).
+36 and 24 LCM is 72.
+
+a=36, b=5.
+
+gcd = 2^0 * 3^0 * 5^0 = 1.
+lcm = 2^2 * 3^2 * 5^1 = 180.
+
+36 and 24 gcd and lcm is 1 and 180.

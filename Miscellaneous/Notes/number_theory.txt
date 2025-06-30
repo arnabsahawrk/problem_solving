@@ -54,7 +54,7 @@ Goldbach's Conjecture is one of the oldest and best - known unsolved problems in
 
 The Conjecture has been shown to hold for all integer less than 4*10^8 but remains unproven despite considerable effort.
 
-4 = 2 + 2, 6 = 3 + 3, 8 = 4 + 5, 10 = 3 + 7, 5 + 5, and 12 = 5 + 7.
+4 = 2 + 2, 6 = 3 + 3, 8 = 3 + 5, 10 = 3 + 7, 5 + 5, and 12 = 5 + 7.
 
 any odd number to (-2) become prime number. Not all the time. e.g. 25 - 2 = 23 is Prime Number but 27 - 2 = 25 isn't a prime number.
 
