@@ -3,6 +3,7 @@ Policy Based Data Structures
 - Ordered Set
 - Based on Red Black Trees
 - Include in
+- pbds = set + multiset with 2 extra utilizing function.
 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -26,3 +27,5 @@ pbds s
 - s.find_by_order(k): k-th element in a set (counting from zero). returns pointer (0-base indexed). O(logN)
 
 - Rest all of are all set operations.
+
+* In pbds when declare it as a multiset (greater_equal<ll>) it creates problem when we are trying to erase any element from it. So, for that we can't declare as multiset, we have to declare as set (less<ll>) and for duplicate we maintain a pair to track the element with its index.
