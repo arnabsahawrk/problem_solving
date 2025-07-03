@@ -109,3 +109,10 @@ any of decimal value we can write power of 2. The concept 2 power.
 
 const value operation get faster.
 
+Odd and Even
+--------------
+* Odd numbers don't have any even divisors.
+* Find a Odd numbers that has exactly A odd divisors, N == P^A-1. Where P is also a prime odd number.
+- A = 3 -> 5^3-1 -> 25 has 3 odd divisors only.
+
+* Every even divisors has odd and even divisors and even divisors total can divide by odd divisor total.
