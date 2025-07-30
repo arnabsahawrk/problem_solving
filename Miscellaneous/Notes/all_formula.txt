@@ -40,3 +40,7 @@ How many sum we make for a range to a range:
 
 4-> 1 to 10  {1 + 2 + 3 + 4} = 10 here we can make every sum from 1 to 10
 ans so on.
+
+  n
+* ∑   k + (n+1 - k)  basically, the formula we can define as (n(n+1)(n+2))/6 -> how many subarray can make in a sorted array.
+  k = 1

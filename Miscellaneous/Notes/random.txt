@@ -1,0 +1,19 @@
+Array graphical representation
+-------------------------------------
+value
+| 
+|
+| either it will be sorted from decreasing order high to low
+| either it will be sorted from increasing order low to high
+|
+| if unsorted then the graph will anything swing
+|
+|_ _ _ _ _ _ _ _ _ _ _ _
+                       index
+
+
+falg ^=  1 -> basically o or 1 doing.
+
+
+
+1 1 1 1 1 4 -> for median 4 I have to >=
