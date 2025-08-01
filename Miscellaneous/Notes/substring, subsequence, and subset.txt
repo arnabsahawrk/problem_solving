@@ -1,0 +1,29 @@
+The terms substring, subsequence, and subset relate to different ways of selecting elements from a larger collection, with key distinctions in contiguity, order, and the nature of the collection itself.
+
+
+1. Substring: 
+---------------
+A substring is a contiguous sequence of characters within a larger string.
+The characters in a substring must maintain their original relative order and must be adjacent in the original string.
+Example: For the string "apple", "app", "ple", and "le" are substrings, but "ape" is not.
+
+
+2. Subsequence:
+--------------------
+A subsequence is a sequence derived from another sequence by deleting zero or more elements without changing the order of the remaining elements.
+The characters in a subsequence do not need to be contiguous in the original sequence, but their relative order must be preserved.
+Example: For the string "apple", "ape", "ale", and "ppl" are subsequences, as are "app" and "ple".
+
+
+3. Subset: 
+-------------------
+A subset is a set formed by selecting any combination of elements from a larger set, where the order of elements does not matter, and elements do not need to be contiguous.
+The concept of a subset applies to sets, not sequences or strings where order is inherently important.
+Example: For the set {1, 2, 3}, {1}, {2, 3}, and {1, 2, 3} are subsets, as is the empty set {}. The order of elements within a subset does not change its identity (e.g., {1, 2} is the same as {2, 1}).
+
+
+In summary:
+-----------------
+Contiguity: Substrings require contiguity; subsequences and subsets do not.
+Order: Substrings and subsequences preserve the relative order of elements; subsets do not consider order.
+Nature of collection: Substrings and subsequences apply to ordered sequences (like strings or arrays); subsets apply to unordered collections (sets).
