@@ -20,8 +20,50 @@ const int N = 1e5 + 7;
 vector<int> adj[N];
 int dp[N] = {1};
 
-void arnabsahawrk() {
+void dfs(int node, int par)
+{
+    for (int x : adj[node])
+    {
+        if (x == par)
+            continue;
 
+        dfs(x, node);
+        dp[node] += dp[x];
+    }
+}
+
+void arnabsahawrk()
+{
+    int n;
+    cin >> n;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+
+        adj[u].emplace_back(v);
+        adj[v].emplace_back(u);
+    }
+
+    if (n & 1)
+    {
+        out(-1);
+        return;
+    }
+
+    for (int i = 1; i <= n; i++)
+        dp[i]++;
+
+    dfs(1, -1);
+    int ans = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (dp[i] % 2 == 0)
+            ans++;
+    }
+
+    out(ans - 1);
 };
 
 int main()
@@ -31,7 +73,7 @@ int main()
     cout.tie(nullptr);
 
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     while (tc--)
         arnabsahawrk();
 
