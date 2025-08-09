@@ -23,7 +23,7 @@ void arnabsahawrk()
 
     vector<ll> v(n), pref(n, 0);
     ll mx = INT_MIN;
-    for (int i = 0; i < n; i++)
+    for (ll i = 0; i < n; i++)
     {
         cin >> v[i];
 
@@ -31,7 +31,7 @@ void arnabsahawrk()
     }
 
     sort(v.begin(), v.end());
-    for (int i = 0; i < n; i++)
+    for (ll i = 0; i < n; i++)
     {
         if (i == 0)
             pref[i] += v[i];
