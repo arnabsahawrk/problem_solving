@@ -57,26 +57,21 @@ void arnabsahawrk()
 
         auto it = lower_bound(v.begin(), v.end(), x - 1);
 
-        if (it - v.begin() == n - 1)
-            out(pref[it - v.begin()]);
+        ll ans = 0;
+        ll i = it - v.begin();
+
+        if (i != 0)
+        {
+            ans += pref[i - 1];
+
+            ans += ((n - i) * (x - 1)) + 1;
+        }
         else
         {
-            ll ans = 0;
-            ll i = it - v.begin();
-
-            if (i != 0)
-            {
-                ans += pref[i - 1];
-
-                ans += ((n - i) * (x - 1)) + 1;
-            }
-            else
-            {
-                ans += ((n) * (x - 1)) + 1;
-            }
-
-            out(ans);
+            ans += ((n) * (x - 1)) + 1;
         }
+
+        out(ans);
     }
 };
 
