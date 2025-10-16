@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(nullptr);                 \
+    cout.tie(nullptr)
+#define ll long long
+#define vi vector<int>
+#define vll vector<ll>
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define pb push_back
+#define all(v) (v).begin(), (v).end()
+#define endl '\n'
+
+int main()
+{
+    fast_io;
+
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+
+    cout << a - c << " " << b - d << endl;
+
+    return 0;
+}
