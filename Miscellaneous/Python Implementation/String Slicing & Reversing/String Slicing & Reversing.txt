@@ -1,0 +1,78 @@
+1. Basic Reversals:
+---------------------
+
+"hello" → "olleh"
+"abcd" → "dcba"
+"python" → "nohtyp"
+
+2. Reverse First Half:
+-----------------------
+"abcd" → "bacd"
+"hello" → "ehllo"
+"program" → "gorpram"
+
+3. Reverse Second Half:
+--------------------------
+"abcd" → "abdc"
+"hello" → "heoll"
+"python" → "pytohn"
+
+4. Reverse First k Characters:
+---------------------------------
+"abcdef", k=3 → "cbadef"
+"hello", k=2 → "ehllo"
+"programming", k=5 → "rgorpamming"
+
+5. Reverse Last k Characters:
+--------------------------------
+"abcdef", k=3 → "abcfed"
+"hello", k=2 → "helol"
+"coding", k=4 → "ognid"
+
+
+6. Reverse Middle Portion:
+------------------------------
+"hello" (skip first & last) → "hlleo"
+"abcdef" (skip first & last) → "aedcbf"
+"python" (skip first & last) → "pohtyg"
+"programming" (indices 2-8) → "prammargoming"
+
+
+7. Swap First and Last:
+-------------------------
+"abcd" → "dbca"
+"hello" → "oellh"
+"python" → "nythop"
+
+
+8. Swap Halves:
+----------------
+"abcd" → "cdab"
+"hello" → "lohel"
+"programming" → "mingprogram"
+
+
+9. Reverse Specific Range:
+--------------------------
+"abcdefgh" (index 2-5) → "abedcfgh"
+"hello" (index 1-3) → "hlelo"
+"programming" (index 3-7) → "prormamging"
+
+
+10. Complex Patterns:
+------------------------
+"abcdef" (reverse first 2 & last 2, keep middle) → "bacdfe"
+"abcdefgh" (reverse every 2 chars) → "badcfehg"
+"hello" (reverse odd positions) → "hello"
+"abcdef" (split in 3, reverse each) → "bafedc"
+
+11. Challenge Cases:
+------------------------
+"abcdefghij" → "abhgfedcij" (reverse indices 2-7)
+"computer" → "ctupmor" (reverse indices 1-5)
+"algorithm" → "aligrtohm" (reverse middle 4)
+"database" → "databsae" (reverse last 3)
+"frontend" → "tnorfend" (reverse first 4)
+"backend" → "bkcaedn" (reverse all except first & last)
+"slicing" → "ingslci" (swap first 3 with last 3)
+"learning" → "leranign" (reverse indices 3-6)
